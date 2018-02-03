@@ -33,5 +33,3 @@ Deck.all.each do |deck|
     puts "deck_tag was created: #{deck_tag}"
   end
 end
-
-
