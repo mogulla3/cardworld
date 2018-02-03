@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get 'decks/:deck_id/cards' => 'cards#index'
   get 'decks/:deck_id/cards/:card_id' => 'cards#show'
 
-  get 'tag' => 'tags#index'
-  get 'tag/:tag_id' => 'tags#show'
+  get 'tags' => 'tags#index'
+  get 'tags/:tag_id' => 'tags#show'
 end
