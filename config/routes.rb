@@ -1,19 +1,13 @@
 Rails.application.routes.draw do
-  get 'tag/index'
+  get 'users' => 'users#index'
+  get 'users/:user_id' => 'users#show'
 
-  get 'tag/show'
+  get 'decks' => 'decks#index'
+  get 'decks/:deck_id' => 'decks#show'
 
-  get 'cards/index'
+  get 'decks/:deck_id/cards' => 'cards#index'
+  get 'decks/:deck_id/cards/:card_id' => 'cards#show'
 
-  get 'cards/show'
-
-  get 'decks/index'
-
-  get 'decks/show'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'tag' => 'tags#index'
+  get 'tag/:tag_id' => 'tags#show'
 end
