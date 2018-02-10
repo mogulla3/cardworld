@@ -1,2 +1,4 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.greeting %></h1>
+<% @user.decks.each do |deck| %>
+  <%= deck.summary %><br>
+<% end%>
