@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails'
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 gem 'puma'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'active_model_serializers'
