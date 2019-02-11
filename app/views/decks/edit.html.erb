@@ -1,0 +1,6 @@
+<h1>Decks#edit</h1>
+
+<%= form_for(@deck, url: update_deck_path(@deck.id), method: :put) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
