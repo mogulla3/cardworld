@@ -6,9 +6,7 @@ require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
 require "action_controller/railtie"
-# require "action_mailer/railtie"
 require "action_view/railtie"
-# require "action_cable/engine"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
@@ -26,4 +24,6 @@ module Cardworld
     # -- all .rb files in that directory are automatically loaded.
     config.active_record.sqlite3.represent_boolean_as_integer = true
   end
+
+  ActiveRecord::SessionStore::Session.serializer = :json
 end
