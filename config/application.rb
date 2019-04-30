@@ -9,6 +9,7 @@ require "action_controller/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
+require_relative "../lib/cardworld/middleware/my_middleware.rb"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -23,6 +24,11 @@ module Cardworld
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.active_record.sqlite3.represent_boolean_as_integer = true
+
+    # For debugging
+    config.middleware.delete "WebConsole::Middleware"
+    config.middleware.delete "ActionDispatch::DebugExceptions"
+    config.middleware.insert_before ActionDispatch::Session::ActiveRecordStore, Cardworld::Middleware::MyMiddleware
   end
 
   ActiveRecord::SessionStore::Session.serializer = :json
