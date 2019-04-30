@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'flashes' => 'flashes#index', as: :flashes
   get 'flash_test' => 'flashes#flash_test'
+  get 'flash_test2' => 'flashes#flash_test2'
 
   get 'decks' => 'decks#index'
   get 'decks/:id' => 'decks#show', as: :deck
