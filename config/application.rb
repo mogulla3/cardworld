@@ -25,10 +25,16 @@ module Cardworld
     # -- all .rb files in that directory are automatically loaded.
     config.active_record.sqlite3.represent_boolean_as_integer = true
 
+    # Session
+    config.session_store :active_record_store
+
     # For debugging
     config.middleware.delete "WebConsole::Middleware"
     config.middleware.delete "ActionDispatch::DebugExceptions"
     config.middleware.insert_before ActionDispatch::Session::ActiveRecordStore, Cardworld::Middleware::MyMiddleware
+    config.middleware.insert_after ActionDispatch::Session::ActiveRecordStore, Cardworld::Middleware::MyMiddleware
+    config.middleware.insert_after ActionDispatch::Flash, Cardworld::Middleware::MyMiddleware
+    config.middleware.insert_after Rack::TempfileReaper, Cardworld::Middleware::MyMiddleware
   end
 
   ActiveRecord::SessionStore::Session.serializer = :json

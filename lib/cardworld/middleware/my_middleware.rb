@@ -9,9 +9,9 @@ module Cardworld
       end
 
       def call(env)
-        pp "before call (#{self.class})"
+        req = ActionDispatch::Request.new env
         res = @app.call(env)
-        pp "after call (#{self.class})"
+        pp req.flash
         res
       end
     end

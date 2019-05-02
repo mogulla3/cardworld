@@ -1,14 +1,12 @@
 class FlashesController < ApplicationController
   def index; end
 
-  def flash_test
-    redirect_to(flashes_path, flash: { message: 'Hello, flash! from #flash_test' } )
+  def add
+    flash[:message] = 'Hello, flash!'
+    render :index
   end
 
-  def flash_test2
-    flash[:message1] = 'Hello, flash! from #flash_test2'
-    flash[:message2] = 'Hello, flash! from #flash_test2'
-    flash[:message3] = 'Hello, flash! from #flash_test2'
-    render :index
+  def add_and_redirect
+    redirect_to(flashes_path, flash: { message: 'Hello, flash!' } )
   end
 end

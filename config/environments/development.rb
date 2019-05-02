@@ -1,6 +1,4 @@
 Rails.application.configure do
-  Rails.application.config.session_store :active_record_store, :key => '_cardworld_session'
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on

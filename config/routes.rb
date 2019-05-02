@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   get 'users/:user_id' => 'users#show'
 
   get 'flashes' => 'flashes#index', as: :flashes
-  get 'flash_test' => 'flashes#flash_test'
-  get 'flash_test2' => 'flashes#flash_test2'
+  get 'flash_add' => 'flashes#add'
+  get 'flash_add_and_redirect' => 'flashes#add_and_redirect'
 
   get 'decks' => 'decks#index'
   get 'decks/:id' => 'decks#show', as: :deck
